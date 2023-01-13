@@ -11,7 +11,6 @@ load_dotenv()
 
 spark = SparkSession.builder.appName("atl-crime").getOrCreate()
 df = spark.read.options(header=True,inferSchema=True).csv("atlcrime.csv")
-print(df.show())
 
 # This dataframe shows the total number of occurences, the average amount of crimes per year, and the average amount of crimes per month during the time period of January 1st 2009 and February 28th (Approximately 8.16 years or 98 months) 
 
